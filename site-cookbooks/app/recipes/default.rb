@@ -27,3 +27,9 @@ postgresql_database_user 'sample-user' do
   password   'ultra_secret'
   action     :create
 end
+
+rbenv_ruby "2.3.1"
+
+rbenv_gem "bundler" do
+  ruby_version "2.3.1"
+end
