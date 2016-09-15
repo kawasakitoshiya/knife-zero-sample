@@ -1,0 +1,19 @@
+{
+  "name": "vagrant.vm",
+  "normal": {
+    "knife_zero": {
+      "host": "192.168.33.10"
+    },
+    "tags": [
+
+    ]
+  },
+  "run_list": [
+    "recipe[postgresql::client]",
+    "recipe[postgresql::server]",
+    "recipe[postgresql::contrib]",
+    "recipe[rbenv::default]",
+    "recipe[rbenv::ruby_build]",
+    "recipe[imagemagick::default]"
+  ]
+}
