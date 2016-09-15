@@ -6,14 +6,816 @@
     },
     "tags": [
 
-    ]
+    ],
+    "postgresql": {
+      "config": {
+        "data_directory": "/var/lib/postgresql/9.3/main",
+        "hba_file": "/etc/postgresql/9.3/main/pg_hba.conf",
+        "ident_file": "/etc/postgresql/9.3/main/pg_ident.conf",
+        "external_pid_file": "/var/run/postgresql/9.3-main.pid",
+        "unix_socket_directories": "/var/run/postgresql",
+        "ssl_cert_file": "/etc/ssl/certs/ssl-cert-snakeoil.pem",
+        "ssl_key_file": "/etc/ssl/private/ssl-cert-snakeoil.key"
+      }
+    },
+    "rbenv": {
+      "root": "/opt/rbenv"
+    },
+    "ruby_build": {
+      "prefix": "/opt/rbenv/plugins/ruby_build",
+      "bin_path": "/opt/rbenv/plugins/ruby_build/bin"
+    }
+  },
+  "default": {
+    "apt": {
+      "cacher-client": {
+        "restrict_environment": false
+      },
+      "cacher_dir": "/var/cache/apt-cacher-ng",
+      "cacher_interface": null,
+      "cacher_port": 3142,
+      "cacher_ssl_support": false,
+      "caching_server": false,
+      "compiletime": false,
+      "compile_time_update": false,
+      "key_proxy": "",
+      "cache_bypass": {
+
+      },
+      "periodic_update_min_delay": 86400,
+      "launchpad_api_version": "1.0",
+      "unattended_upgrades": {
+        "enable": false,
+        "update_package_lists": true,
+        "allowed_origins": [
+          "Ubuntu trusty"
+        ],
+        "origins_patterns": [
+
+        ],
+        "package_blacklist": [
+
+        ],
+        "auto_fix_interrupted_dpkg": false,
+        "minimal_steps": false,
+        "install_on_shutdown": false,
+        "mail": null,
+        "mail_only_on_error": true,
+        "remove_unused_dependencies": false,
+        "automatic_reboot": false,
+        "automatic_reboot_time": "now",
+        "dl_limit": null,
+        "random_sleep": null
+      },
+      "confd": {
+        "install_recommends": true,
+        "install_suggests": false
+      }
+    },
+    "windows": {
+      "rubyzipversion": null
+    },
+    "seven_zip": {
+      "url": "http://www.7-zip.org/a/7z1514-x64.msi",
+      "checksum": "cefe1a9092d8a6be68468c33910d6206b40e934fb63cab686c5cccf369fbf712",
+      "package_name": "7-Zip 15.14 (x64 edition)",
+      "default_extract_timeout": 600
+    },
+    "build-essential": {
+      "compile_time": false,
+      "msys2": {
+        "path": "\\msys2"
+      }
+    },
+    "openssl": {
+      "packages": [
+
+      ],
+      "restart_services": [
+
+      ]
+    },
+    "postgresql": {
+      "enable_pgdg_apt": false,
+      "enable_pgdg_yum": false,
+      "use_pgdg_packages": false,
+      "server": {
+        "config_change_notify": "restart",
+        "init_package": "upstart",
+        "service_name": "postgresql",
+        "packages": [
+          "postgresql-9.3"
+        ]
+      },
+      "assign_postgres_password": true,
+      "database_name": "template1",
+      "version": "9.3",
+      "dir": "/etc/postgresql/9.3/main",
+      "client": {
+        "packages": [
+          "postgresql-client-9.3",
+          "libpq-dev"
+        ]
+      },
+      "contrib": {
+        "packages": [
+          "postgresql-contrib-9.3"
+        ]
+      },
+      "config": {
+        "listen_addresses": "localhost",
+        "port": 5432,
+        "max_connections": 100,
+        "shared_buffers": "24MB",
+        "log_line_prefix": "%t ",
+        "datestyle": "iso, mdy",
+        "default_text_search_config": "pg_catalog.english",
+        "ssl": true
+      },
+      "pg_hba": [
+        {
+          "type": "local",
+          "db": "all",
+          "user": "postgres",
+          "addr": null,
+          "method": "ident"
+        },
+        {
+          "type": "local",
+          "db": "all",
+          "user": "all",
+          "addr": null,
+          "method": "ident"
+        },
+        {
+          "type": "host",
+          "db": "all",
+          "user": "all",
+          "addr": "127.0.0.1/32",
+          "method": "md5"
+        },
+        {
+          "type": "host",
+          "db": "all",
+          "user": "all",
+          "addr": "::1/128",
+          "method": "md5"
+        }
+      ],
+      "password": {
+        "postgres": "8CbqUtPX3vjWTnXTivHV"
+      },
+      "pgdg": {
+        "release_apt_codename": "trusty",
+        "repo_rpm_url": {
+          "9.4": {
+            "redhat": {
+              "7": {
+                "x86_64": {
+                  "url": "http://yum.postgresql.org/9.4/redhat/rhel-7-x86_64/",
+                  "package": "pgdg-redhat94-9.4-2.noarch.rpm"
+                }
+              },
+              "6": {
+                "i386": {
+                  "url": "http://yum.postgresql.org/9.4/redhat/rhel-6-i386/",
+                  "package": "pgdg-redhat94-9.4-2.noarch.rpm"
+                },
+                "x86_64": {
+                  "url": "http://yum.postgresql.org/9.4/redhat/rhel-6-x86_64/",
+                  "package": "pgdg-redhat94-9.4-2.noarch.rpm"
+                }
+              },
+              "5": {
+                "i386": {
+                  "url": "http://yum.postgresql.org/9.4/redhat/rhel-5-i386/",
+                  "package": "pgdg-redhat94-9.4-2.noarch.rpm"
+                },
+                "x86_64": {
+                  "url": "http://yum.postgresql.org/9.4/redhat/rhel-5-x86_64/",
+                  "package": "pgdg-redhat94-9.4-2.noarch.rpm"
+                }
+              }
+            },
+            "centos": {
+              "7": {
+                "x86_64": {
+                  "url": "http://yum.postgresql.org/9.4/redhat/rhel-7-x86_64/",
+                  "package": "pgdg-centos94-9.4-2.noarch.rpm"
+                }
+              },
+              "6": {
+                "i386": {
+                  "url": "http://yum.postgresql.org/9.4/redhat/rhel-6-i386/",
+                  "package": "pgdg-centos94-9.4-2.noarch.rpm"
+                },
+                "x86_64": {
+                  "url": "http://yum.postgresql.org/9.4/redhat/rhel-6-x86_64/",
+                  "package": "pgdg-centos94-9.4-2.noarch.rpm"
+                }
+              },
+              "5": {
+                "x86_64": {
+                  "url": "http://yum.postgresql.org/9.4/redhat/rhel-5-x86_64/",
+                  "package": "pgdg-centos94-9.4-2.noarch.rpm"
+                },
+                "i386": {
+                  "url": "http://yum.postgresql.org/9.4/redhat/rhel-5-i386/",
+                  "package": "pgdg-centos94-9.4-2.noarch.rpm"
+                }
+              }
+            },
+            "fedora": {
+              "22": {
+                "x86_64": {
+                  "url": "http://yum.postgresql.org/9.4/fedora/fedora-22-x86_64/",
+                  "package": "pgdg-fedora94-9.4-3.noarch.rpm"
+                }
+              },
+              "21": {
+                "x86_64": {
+                  "url": "http://yum.postgresql.org/9.4/fedora/fedora-21-x86_64/",
+                  "package": "pgdg-fedora94-9.4-2.noarch.rpm"
+                },
+                "i386": {
+                  "url": "http://yum.postgresql.org/9.4/fedora/fedora-21-i686/",
+                  "package": "pgdg-fedora94-9.4-2.noarch.rpm"
+                }
+              },
+              "20": {
+                "x86_64": {
+                  "url": "http://yum.postgresql.org/9.4/fedora/fedora-20-x86_64/",
+                  "package": "pgdg-fedora94-9.4-1.noarch.rpm"
+                },
+                "i386": {
+                  "url": "http://yum.postgresql.org/9.4/fedora/fedora-20-i686/",
+                  "package": "pgdg-fedora94-9.4-1.noarch.rpm"
+                }
+              }
+            },
+            "amazon": {
+              "2015": {
+                "i386": {
+                  "url": "http://yum.postgresql.org/9.4/redhat/rhel-6-i386/",
+                  "package": "pgdg-ami201503-94-9.4-2.noarch.rpm"
+                },
+                "x86_64": {
+                  "url": "http://yum.postgresql.org/9.4/redhat/rhel-6-x86_64/",
+                  "package": "pgdg-ami201503-94-9.4-2.noarch.rpm"
+                }
+              }
+            },
+            "scientific": {
+              "7": {
+                "x86_64": {
+                  "url": "http://yum.postgresql.org/9.4/redhat/rhel-7-x86_64/",
+                  "package": "pgdg-sl94-9.4-2.noarch.rpm"
+                }
+              },
+              "6": {
+                "i386": {
+                  "url": "http://yum.postgresql.org/9.4/redhat/rhel-6-i386/",
+                  "package": "pgdg-sl94-9.4-2.noarch.rpm"
+                },
+                "x86_64": {
+                  "url": "http://yum.postgresql.org/9.4/redhat/rhel-6-x86_64/",
+                  "package": "pgdg-sl94-9.4-2.noarch.rpm"
+                }
+              },
+              "5": {
+                "i386": {
+                  "url": "http://yum.postgresql.org/9.4/redhat/rhel-5-i386/",
+                  "package": "pgdg-sl94-9.4-2.noarch.rpm"
+                },
+                "x86_64": {
+                  "url": "http://yum.postgresql.org/9.4/redhat/rhel-5-x86_64/",
+                  "package": "pgdg-sl94-9.4-2.noarch.rpm"
+                }
+              }
+            },
+            "oracle": {
+              "7": {
+                "x86_64": {
+                  "url": "http://yum.postgresql.org/9.4/redhat/rhel-7-x86_64/",
+                  "package": "pgdg-oraclelinux94-9.4-2.noarch.rpm"
+                }
+              },
+              "6": {
+                "i386": {
+                  "url": "http://yum.postgresql.org/9.4/redhat/rhel-6-i386/",
+                  "package": "pgdg-oraclelinux94-9.4-2.noarch.rpm"
+                },
+                "x86_64": {
+                  "url": "http://yum.postgresql.org/9.4/redhat/rhel-6-x86_64/",
+                  "package": "pgdg-oraclelinux94-9.4-2.noarch.rpm"
+                }
+              }
+            }
+          },
+          "9.3": {
+            "amazon": {
+              "2015": {
+                "i386": {
+                  "url": "http://yum.postgresql.org/9.3/redhat/rhel-6-i386/",
+                  "package": "pgdg-redhat93-9.3-2.noarch.rpm"
+                },
+                "x86_64": {
+                  "url": "http://yum.postgresql.org/9.3/redhat/rhel-6-x86_64/",
+                  "package": "pgdg-redhat93-9.3-2.noarch.rpm"
+                }
+              },
+              "2014": {
+                "i386": {
+                  "url": "http://yum.postgresql.org/9.3/redhat/rhel-6-i386/",
+                  "package": "pgdg-redhat93-9.3-2.noarch.rpm"
+                },
+                "x86_64": {
+                  "url": "http://yum.postgresql.org/9.3/redhat/rhel-6-x86_64/",
+                  "package": "pgdg-redhat93-9.3-2.noarch.rpm"
+                }
+              },
+              "2013": {
+                "i386": {
+                  "url": "http://yum.postgresql.org/9.3/redhat/rhel-6-i386/",
+                  "package": "pgdg-redhat93-9.3-2.noarch.rpm"
+                },
+                "x86_64": {
+                  "url": "http://yum.postgresql.org/9.3/redhat/rhel-6-x86_64/",
+                  "package": "pgdg-redhat93-9.3-2.noarch.rpm"
+                }
+              }
+            },
+            "centos": {
+              "7": {
+                "x86_64": {
+                  "url": "http://yum.postgresql.org/9.3/redhat/rhel-7-x86_64/",
+                  "package": "pgdg-centos93-9.3-2.noarch.rpm"
+                }
+              },
+              "6": {
+                "i386": {
+                  "url": "http://yum.postgresql.org/9.3/redhat/rhel-6-i386/",
+                  "package": "pgdg-centos93-9.3-2.noarch.rpm"
+                },
+                "x86_64": {
+                  "url": "http://yum.postgresql.org/9.3/redhat/rhel-6-x86_64/",
+                  "package": "pgdg-centos93-9.3-2.noarch.rpm"
+                }
+              },
+              "5": {
+                "i386": {
+                  "url": "http://yum.postgresql.org/9.3/redhat/rhel-5-i386/",
+                  "package": "pgdg-centos93-9.3-2.noarch.rpm"
+                },
+                "x86_64": {
+                  "url": "http://yum.postgresql.org/9.3/redhat/rhel-5-x86_64/",
+                  "package": "pgdg-centos93-9.3-2.noarch.rpm"
+                }
+              }
+            },
+            "redhat": {
+              "7": {
+                "x86_64": {
+                  "url": "http://yum.postgresql.org/9.3/redhat/rhel-7-x86_64/",
+                  "package": "pgdg-redhat93-9.3-2.noarch.rpm"
+                }
+              },
+              "6": {
+                "i386": {
+                  "url": "http://yum.postgresql.org/9.3/redhat/rhel-6-i386/",
+                  "package": "pgdg-redhat93-9.3-2.noarch.rpm"
+                },
+                "x86_64": {
+                  "url": "http://yum.postgresql.org/9.3/redhat/rhel-6-x86_64/",
+                  "package": "pgdg-redhat93-9.3-2.noarch.rpm"
+                }
+              },
+              "5": {
+                "i386": {
+                  "url": "http://yum.postgresql.org/9.3/redhat/rhel-5-i386/",
+                  "package": "pgdg-redhat93-9.3-2.noarch.rpm"
+                },
+                "x86_64": {
+                  "url": "http://yum.postgresql.org/9.3/redhat/rhel-5-x86_64/",
+                  "package": "pgdg-redhat93-9.3-2.noarch.rpm"
+                }
+              }
+            },
+            "oracle": {
+              "6": {
+                "i386": {
+                  "url": "http://yum.postgresql.org/9.3/redhat/rhel-6-i386/",
+                  "package": "pgdg-redhat93-9.3-2.noarch.rpm"
+                },
+                "x86_64": {
+                  "url": "http://yum.postgresql.org/9.3/redhat/rhel-6-x86_64/",
+                  "package": "pgdg-redhat93-9.3-2.noarch.rpm"
+                }
+              },
+              "5": {
+                "i386": {
+                  "url": "http://yum.postgresql.org/9.3/redhat/rhel-5-i386/",
+                  "package": "pgdg-redhat93-9.3-2.noarch.rpm"
+                },
+                "x86_64": {
+                  "url": "http://yum.postgresql.org/9.3/redhat/rhel-5-x86_64/",
+                  "package": "pgdg-redhat93-9.3-2.noarch.rpm"
+                }
+              }
+            },
+            "scientific": {
+              "6": {
+                "i386": {
+                  "url": "http://yum.postgresql.org/9.3/redhat/rhel-6-i386/",
+                  "package": "pgdg-sl93-9.3-2.noarch.rpm"
+                },
+                "x86_64": {
+                  "url": "http://yum.postgresql.org/9.3/redhat/rhel-6-x86_64/",
+                  "package": "pgdg-sl93-9.3-2.noarch.rpm"
+                }
+              },
+              "5": {
+                "i386": {
+                  "url": "http://yum.postgresql.org/9.3/redhat/rhel-5-i386/",
+                  "package": "pgdg-sl93-9.3-2.noarch.rpm"
+                },
+                "x86_64": {
+                  "url": "http://yum.postgresql.org/9.3/redhat/rhel-5-x86_64/",
+                  "package": "pgdg-sl93-9.3-2.noarch.rpm"
+                }
+              }
+            },
+            "fedora": {
+              "20": {
+                "x86_64": {
+                  "url": "http://yum.postgresql.org/9.3/fedora/fedora-20-x86_64/",
+                  "pakcage": "pgdg-fedora93-9.3-1.noarch.rpm"
+                }
+              },
+              "19": {
+                "x86_64": {
+                  "url": "http://yum.postgresql.org/9.3/fedora/fedora-19-x86_64/",
+                  "pakcage": "pgdg-fedora93-9.3-1.noarch.rpm"
+                }
+              },
+              "18": {
+                "i386": {
+                  "url": "http://yum.postgresql.org/9.3/fedora/fedora-18-i386/",
+                  "package": "pgdg-fedora93-9.3-1.noarch.rpm"
+                },
+                "x86_64": {
+                  "url": "http://yum.postgresql.org/9.3/fedora/fedora-18-x86_64/",
+                  "package": "pgdg-fedora93-9.3-1.noarch.rpm"
+                }
+              },
+              "17": {
+                "i386": {
+                  "url": "http://yum.postgresql.org/9.3/fedora/fedora-17-i386/",
+                  "package": "pgdg-fedora93-9.3-1.noarch.rpm"
+                },
+                "x86_64": {
+                  "url": "http://yum.postgresql.org/9.3/fedora/fedora-17-x86_64/",
+                  "package": "pgdg-fedora93-9.3-1.noarch.rpm"
+                }
+              }
+            }
+          },
+          "9.2": {
+            "centos": {
+              "6": {
+                "i386": {
+                  "url": "http://yum.postgresql.org/9.2/redhat/rhel-6-i386/",
+                  "package": "pgdg-centos92-9.2-7.noarch.rpm"
+                },
+                "x86_64": {
+                  "url": "http://yum.postgresql.org/9.2/redhat/rhel-6-x86_64/",
+                  "package": "pgdg-centos92-9.2-7.noarch.rpm"
+                }
+              },
+              "5": {
+                "i386": {
+                  "url": "http://yum.postgresql.org/9.2/redhat/rhel-5-i386/",
+                  "package": "pgdg-centos92-9.2-7.noarch.rpm"
+                },
+                "x86_64": {
+                  "url": "http://yum.postgresql.org/9.2/redhat/rhel-5-x86_64/",
+                  "package": "pgdg-centos92-9.2-7.noarch.rpm"
+                }
+              }
+            },
+            "redhat": {
+              "6": {
+                "i386": {
+                  "url": "http://yum.postgresql.org/9.2/redhat/rhel-6-i386/",
+                  "package": "pgdg-redhat92-9.2-7.noarch.rpm"
+                },
+                "x86_64": {
+                  "url": "http://yum.postgresql.org/9.2/redhat/rhel-6-x86_64/",
+                  "package": "pgdg-redhat92-9.2-7.noarch.rpm"
+                }
+              },
+              "5": {
+                "i386": {
+                  "url": "http://yum.postgresql.org/9.2/redhat/rhel-5-i386/",
+                  "package": "pgdg-redhat92-9.2-7.noarch.rpm"
+                },
+                "x86_64": {
+                  "url": "http://yum.postgresql.org/9.2/redhat/rhel-5-x86_64/",
+                  "package": "pgdg-redhat92-9.2-7.noarch.rpm"
+                }
+              }
+            },
+            "oracle": {
+              "6": {
+                "i386": {
+                  "url": "http://yum.postgresql.org/9.2/redhat/rhel-6-i386/",
+                  "package": "pgdg-redhat92-9.2-7.noarch.rpm"
+                },
+                "x86_64": {
+                  "url": "http://yum.postgresql.org/9.2/redhat/rhel-6-x86_64/",
+                  "package": "pgdg-redhat92-9.2-7.noarch.rpm"
+                }
+              },
+              "5": {
+                "i386": {
+                  "url": "http://yum.postgresql.org/9.2/redhat/rhel-5-i386/",
+                  "package": "pgdg-redhat92-9.2-7.noarch.rpm"
+                },
+                "x86_64": {
+                  "url": "http://yum.postgresql.org/9.2/redhat/rhel-5-x86_64/",
+                  "package": "pgdg-redhat92-9.2-7.noarch.rpm"
+                }
+              }
+            },
+            "scientific": {
+              "6": {
+                "i386": {
+                  "url": "http://yum.postgresql.org/9.2/redhat/rhel-6-i386/",
+                  "package": "pgdg-sl92-9.2-8.noarch.rpm"
+                },
+                "x86_64": {
+                  "url": "http://yum.postgresql.org/9.2/redhat/rhel-6-x86_64/",
+                  "package": "pgdg-sl92-9.2-8.noarch.rpm"
+                }
+              },
+              "5": {
+                "i386": {
+                  "url": "http://yum.postgresql.org/9.2/redhat/rhel-5-i386/",
+                  "package": "pgdg-sl92-9.2-8.noarch.rpm"
+                },
+                "x86_64": {
+                  "url": "http://yum.postgresql.org/9.2/redhat/rhel-5-x86_64/",
+                  "package": "pgdg-sl92-9.2-8.noarch.rpm"
+                }
+              }
+            },
+            "fedora": {
+              "19": {
+                "i386": {
+                  "url": "http://yum.postgresql.org/9.2/fedora/fedora-19-i386/",
+                  "package": "pgdg-fedora92-9.2-6.noarch.rpm"
+                },
+                "x86_64": {
+                  "url": "http://yum.postgresql.org/9.2/fedora/fedora-19-x86_64/",
+                  "package": "pgdg-fedora92-9.2-6.noarch.rpm"
+                }
+              },
+              "18": {
+                "i386": {
+                  "url": "http://yum.postgresql.org/9.2/fedora/fedora-18-i386/",
+                  "package": "pgdg-fedora92-9.2-6.noarch.rpm"
+                },
+                "x86_64": {
+                  "url": "http://yum.postgresql.org/9.2/fedora/fedora-18-x86_64/",
+                  "package": "pgdg-fedora92-9.2-6.noarch.rpm"
+                }
+              },
+              "17": {
+                "i386": {
+                  "url": "http://yum.postgresql.org/9.2/fedora/fedora-17-i386/",
+                  "package": "pgdg-fedora92-9.2-6.noarch.rpm"
+                },
+                "x86_64": {
+                  "url": "http://yum.postgresql.org/9.2/fedora/fedora-17-x86_64/",
+                  "package": "pgdg-fedora92-9.2-5.noarch.rpm"
+                }
+              },
+              "16": {
+                "i386": {
+                  "url": "http://yum.postgresql.org/9.2/fedora/fedora-16-i386/",
+                  "package": "pgdg-fedora92-9.2-5.noarch.rpm"
+                },
+                "x86_64": {
+                  "url": "http://yum.postgresql.org/9.2/fedora/fedora-16-x86_64/",
+                  "package": "pgdg-fedora92-9.2-5.noarch.rpm"
+                }
+              }
+            }
+          }
+        }
+      },
+      "initdb_locale": "UTF-8"
+    },
+    "dmg": {
+      "base_dir": "/Applications",
+      "cache_dir": "/var/chef/cache"
+    },
+    "yum": {
+      "main": {
+        "cachedir": "/var/cache/yum/$basearch/$releasever",
+        "distroverpkg": "ubuntu-release",
+        "releasever": null,
+        "alwaysprompt": null,
+        "assumeyes": null,
+        "bandwidth": null,
+        "bugtracker_url": null,
+        "clean_requirements_on_remove": null,
+        "color": null,
+        "color_list_available_downgrade": null,
+        "color_list_available_install": null,
+        "color_list_available_reinstall": null,
+        "color_list_available_upgrade": null,
+        "color_list_installed_extra": null,
+        "color_list_installed_newer": null,
+        "color_list_installed_older": null,
+        "color_list_installed_reinstall": null,
+        "color_search_match": null,
+        "color_update_installed": null,
+        "color_update_local": null,
+        "color_update_remote": null,
+        "commands": null,
+        "deltarpm": null,
+        "debuglevel": null,
+        "diskspacecheck": null,
+        "enable_group_conditionals": null,
+        "errorlevel": null,
+        "exactarch": null,
+        "exclude": null,
+        "gpgcheck": true,
+        "group_package_types": null,
+        "groupremove_leaf_only": null,
+        "history_list_view": null,
+        "history_record": null,
+        "history_record_packages": null,
+        "http_caching": null,
+        "installonly_limit": null,
+        "installonlypkgs": null,
+        "installroot": null,
+        "keepalive": null,
+        "keepcache": false,
+        "kernelpkgnames": null,
+        "localpkg_gpgcheck": false,
+        "logfile": "/var/log/yum.log",
+        "max_retries": null,
+        "mdpolicy": null,
+        "metadata_expire": null,
+        "mirrorlist_expire": null,
+        "multilib_policy": null,
+        "obsoletes": null,
+        "overwrite_groups": null,
+        "password": null,
+        "path": "/etc/yum.conf",
+        "persistdir": null,
+        "pluginconfpath": null,
+        "pluginpath": null,
+        "plugins": null,
+        "protected_multilib": null,
+        "protected_packages": null,
+        "proxy": null,
+        "proxy_password": null,
+        "proxy_username": null,
+        "recent": null,
+        "repo_gpgcheck": null,
+        "reposdir": null,
+        "reset_nice": null,
+        "rpmverbosity": null,
+        "showdupesfromrepos": null,
+        "skip_broken": null,
+        "ssl_check_cert_permissions": null,
+        "sslcacert": null,
+        "sslclientcert": null,
+        "sslclientkey": null,
+        "sslverify": null,
+        "syslog_device": null,
+        "syslog_facility": null,
+        "syslog_ident": null,
+        "throttle": null,
+        "timeout": null,
+        "tolerant": false,
+        "tsflags": null,
+        "username": null
+      },
+      "epel-debuginfo": {
+        "repositoryid": "epel-debuginfo",
+        "description": "Extra Packages for $releasever - $basearch - Debug",
+        "mirrorlist": "http://mirrors.fedoraproject.org/mirrorlist?repo=epel-debug-14&arch=$basearch",
+        "gpgkey": "https://dl.fedoraproject.org/pub/epel/RPM-GPG-KEY-EPEL-14",
+        "failovermethod": "priority",
+        "gpgcheck": true,
+        "enabled": false,
+        "managed": false,
+        "make_cache": true
+      },
+      "epel-source": {
+        "repositoryid": "epel-source",
+        "description": "Extra Packages for $releasever - $basearch - Source",
+        "mirrorlist": "http://mirrors.fedoraproject.org/mirrorlist?repo=epel-source-14&arch=$basearch",
+        "gpgkey": "https://dl.fedoraproject.org/pub/epel/RPM-GPG-KEY-EPEL-14",
+        "failovermethod": "priority",
+        "gpgcheck": true,
+        "enabled": false,
+        "managed": false,
+        "make_cache": true
+      },
+      "epel-testing-debuginfo": {
+        "repositoryid": "epel-testing-debuginfo",
+        "description": "Extra Packages for $releasever - $basearch - Testing Debug",
+        "mirrorlist": "http://mirrors.fedoraproject.org/mirrorlist?repo=testing-debug-epel14&arch=$basearch",
+        "gpgkey": "https://dl.fedoraproject.org/pub/epel/RPM-GPG-KEY-EPEL-14",
+        "failovermethod": "priority",
+        "gpgcheck": true,
+        "enabled": false,
+        "managed": false,
+        "make_cache": true
+      },
+      "epel-testing-source": {
+        "repositoryid": "epel-testing-source",
+        "description": "Extra Packages for $releasever - $basearch - Testing Source",
+        "mirrorlist": "http://mirrors.fedoraproject.org/mirrorlist?repo=testing-source-epel14&arch=$basearch",
+        "gpgkey": "https://dl.fedoraproject.org/pub/epel/RPM-GPG-KEY-EPEL-14",
+        "failovermethod": "priority",
+        "gpgcheck": true,
+        "enabled": false,
+        "managed": false,
+        "make_cache": true
+      },
+      "epel-testing": {
+        "repositoryid": "epel-testing",
+        "description": "Extra Packages for $releasever - $basearch - Testing ",
+        "mirrorlist": "http://mirrors.fedoraproject.org/mirrorlist?repo=testing-epel14&arch=$basearch",
+        "gpgkey": "https://dl.fedoraproject.org/pub/epel/RPM-GPG-KEY-EPEL-14",
+        "failovermethod": "priority",
+        "gpgcheck": true,
+        "enabled": false,
+        "managed": false,
+        "make_cache": true
+      },
+      "epel": {
+        "repositoryid": "epel",
+        "description": "Extra Packages for $releasever - $basearch",
+        "mirrorlist": "http://mirrors.fedoraproject.org/mirrorlist?repo=epel-14&arch=$basearch",
+        "gpgkey": "https://dl.fedoraproject.org/pub/epel/RPM-GPG-KEY-EPEL-14",
+        "failovermethod": "priority",
+        "gpgcheck": true,
+        "enabled": true,
+        "managed": true,
+        "make_cache": true
+      }
+    },
+    "yum-epel": {
+      "repositories": [
+        "epel",
+        "epel-debuginfo",
+        "epel-source",
+        "epel-testing",
+        "epel-testing-debuginfo",
+        "epel-testing-source"
+      ]
+    },
+    "git": {
+      "prefix": "/usr/local",
+      "version": "2.8.1",
+      "url": "https://nodeload.github.com/git/git/tar.gz/v%{version}",
+      "checksum": "e08503ecaf5d3ac10c40f22871c996a392256c8d038d16f52ebf974cba29ae42",
+      "use_pcre": false,
+      "server": {
+        "base_path": "/srv/git",
+        "export_all": true
+      }
+    },
+    "rbenv": {
+      "user": "rbenv",
+      "group": "rbenv",
+      "manage_home": true,
+      "group_users": [
+
+      ],
+      "git_repository": "https://github.com/sstephenson/rbenv.git",
+      "git_revision": "master",
+      "install_prefix": "/opt",
+      "root_path": "/opt/rbenv",
+      "user_home": "/home/rbenv"
+    },
+    "ruby_build": {
+      "git_repository": "https://github.com/sstephenson/ruby-build.git",
+      "git_revision": "master"
+    },
+    "rbenv_vars": {
+      "git_repository": "https://github.com/sstephenson/rbenv-vars.git",
+      "git_revision": "master"
+    }
   },
   "run_list": [
-    "recipe[postgresql::client]",
-    "recipe[postgresql::server]",
-    "recipe[postgresql::contrib]",
-    "recipe[rbenv::default]",
-    "recipe[rbenv::ruby_build]",
-    "recipe[imagemagick::default]"
+    "recipe[app::default]"
   ]
 }
