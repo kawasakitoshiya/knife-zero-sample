@@ -15,6 +15,7 @@ include_recipe 'imagemagick::default'
 
 include_recipe "database::postgresql"
 
+# create postgres user
 postgresql_connection_info = {
   :host     => '127.0.0.1',
   :port     => node['postgresql']['config']['port'],
@@ -28,8 +29,13 @@ postgresql_database_user 'sample-user' do
   action     :create
 end
 
+# install ruby
 rbenv_ruby "2.3.1"
-
 rbenv_gem "bundler" do
   ruby_version "2.3.1"
+end
+
+# libmagickwand-dev
+package 'libmagickwand-dev' do
+  action :install
 end
